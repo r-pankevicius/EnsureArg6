@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureArgVI", "EnsureArgVI\EnsureArgVI.csproj", "{3471F699-876E-4DD6-BC66-6A4323C43C27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureArgVI.Tests", "..\EnsureArgVI.Tests\EnsureArgVI.Tests.csproj", "{FA4B1BD3-18BE-44DA-9619-CC109A137FBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureArgVI.Tests", "EnsureArgVI.Tests\EnsureArgVI.Tests.csproj", "{FA4B1BD3-18BE-44DA-9619-CC109A137FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

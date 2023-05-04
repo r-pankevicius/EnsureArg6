@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EnsureArgVI\EnsureArgVI\EnsureArgVI.csproj" />
+    <ProjectReference Include="..\EnsureArgVI\EnsureArgVI.csproj" />
   </ItemGroup>
 
 </Project>
