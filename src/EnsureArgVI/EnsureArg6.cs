@@ -9,8 +9,8 @@ namespace EnsureArgVI
 		[return: NotNull]
 		public static string IsNotNull(
 			[NotNull] string? value,
-			[CallerArgumentExpression("value")] string paramName = "",
-			OptsFn optsFn = null)
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
 		{
 			return Ensure.String.IsNotNull(value, paramName, optsFn);
 		}
