@@ -8,7 +8,7 @@ namespace EnsureArgVI
 	{
         [return: NotNull]
         public static T IsNotNull<T>(
-            [NotNull] T value,
+            [NotNull] T? value,
 			[CallerArgumentExpression("value")] string paramName = "") where T : class
             => EnsureArg.IsNotNull(value, paramName);
     }

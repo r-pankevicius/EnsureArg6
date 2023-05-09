@@ -4,9 +4,9 @@
 	{
 		public virtual int Zero => 0;
 
-		public virtual void CheckNotNull(string? notNullString)
+		public virtual void CheckNotNull(object? notNullObject)
 		{
-			EnsureArg6.IsNotNull(notNullString);
+			EnsureArg6.IsNotNull(notNullObject);
 		}
 	}
 }

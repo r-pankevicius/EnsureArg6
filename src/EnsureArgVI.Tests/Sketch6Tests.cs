@@ -18,7 +18,7 @@ namespace EnsureArgVI.Tests
 			var sut = new Sketch6();
 			Action act = () => sut.CheckNotNull(null);
 			act.Should().Throw<ArgumentNullException>()
-				.WithMessage("Value can not be null. (Parameter 'notNullString')");
+				.WithMessage("Value can not be null. (Parameter 'notNullObject')");
 		}
 	}
 }
