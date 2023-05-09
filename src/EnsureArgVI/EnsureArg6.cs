@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace EnsureArgVI
 {
-	public static class EnsureArg6
+	public static partial class EnsureArg6
 	{
 		[return: NotNull]
 		public static string IsNotNull(
