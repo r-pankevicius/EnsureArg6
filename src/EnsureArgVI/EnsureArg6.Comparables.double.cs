@@ -1,4 +1,5 @@
-﻿namespace EnsureArgVI
+﻿#if false
+namespace EnsureArgVI
 {
     public static partial class EnsureArg6
     {
@@ -24,3 +25,4 @@
             => Ensure.Comparable.IsInRange(value, min, max, paramName);
     }
 }
+#endif

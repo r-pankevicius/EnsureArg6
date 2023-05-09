@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
@@ -49,3 +50,4 @@ namespace EnsureArgVI
             => Ensure.Comparable.IsInRange(value, min, max, comparer, paramName);
     }
 }
+#endif

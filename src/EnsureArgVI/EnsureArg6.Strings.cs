@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 using System.Text.RegularExpressions;
 
 using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
@@ -96,3 +97,4 @@ namespace EnsureArgVI
             => Ensure.String.IsAllLettersOrDigits(value, paramName);
     }
 }
+#endif

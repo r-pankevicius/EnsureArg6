@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 
 namespace EnsureArgVI
 {
@@ -35,3 +36,4 @@ namespace EnsureArgVI
             => Ensure.Enum.IsDefinedWithFlagsSupport(value, paramName);
     }
 }
+#endif

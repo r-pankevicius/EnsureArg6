@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if false
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -119,3 +121,4 @@ namespace EnsureArgVI
             => Ensure.Collection.HasAny(value, predicate, paramName);
     }
 }
+#endif

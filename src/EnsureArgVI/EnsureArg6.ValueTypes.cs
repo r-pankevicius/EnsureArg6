@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 
 namespace EnsureArgVI
 {
@@ -20,3 +21,4 @@ namespace EnsureArgVI
             => Ensure.Guid.IsNotEmpty(value, paramName);
     }
 }
+#endif

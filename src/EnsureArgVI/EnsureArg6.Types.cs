@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI
@@ -136,3 +137,4 @@ namespace EnsureArgVI
             => Ensure.Type.IsClass(param, paramName);
     }
 }
+#endif

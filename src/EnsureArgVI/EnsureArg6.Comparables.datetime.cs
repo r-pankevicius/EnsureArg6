@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if false
+using System;
 
 namespace EnsureArgVI
 {
@@ -26,3 +27,4 @@ namespace EnsureArgVI
             => Ensure.Comparable.IsInRange(value, min, max, paramName);
     }
 }
+#endif
