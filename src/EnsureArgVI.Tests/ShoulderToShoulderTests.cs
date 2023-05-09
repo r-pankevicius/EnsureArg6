@@ -1,4 +1,5 @@
 ﻿using EnsureThat;
+using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI.Tests
 {
@@ -13,18 +14,21 @@ namespace EnsureArgVI.Tests
 			static void NoNullzPlz(object param78y653) => EnsureArg.IsNotNull(param78y653, nameof(param78y653));
 			static void NoNullzPlz6(object param78y653) => EnsureArg6.IsNotNull(param78y653);
 
-			AssertThrowsTheSameArgumentException(NoNullzPlz, NoNullzPlz6);
+			// Exclamation marks are used to suppress the warning about the parameter being null.
+			// What is strange because compiler sees that the parameter is not null.
+			AssertThrowsTheSameArgumentException(NoNullzPlz!, NoNullzPlz6!);
 		}
 
 		private static void AssertThrowsTheSameArgumentException(
-			Action ensureArgAction, Action ensureArg6Action)
+			[NotNull] Action<object?> ensureArgAction,
+			[NotNull] Action<object?> ensureArg6Action)
 		{
-			Exception ensureArgException;
-			Exception ensureArg6Exception;
+			Exception? ensureArgException = null;
+			Exception? ensureArg6Exception = null;
 
 			try
 			{
-				ensureArgAction();
+				ensureArgAction(null);
 			}
 			catch (ArgumentException ex1)
 			{
@@ -38,7 +42,7 @@ namespace EnsureArgVI.Tests
 
 			try
 			{
-				ensureArg6Action();
+				ensureArg6Action(null);
 			}
 			catch (ArgumentException ex1)
 			{
