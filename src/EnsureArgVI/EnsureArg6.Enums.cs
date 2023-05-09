@@ -1,9 +1,7 @@
-﻿using JetBrains.Annotations;
+﻿using System;
 
 namespace EnsureArgVI
 {
-    using System;
-
     public static partial class EnsureArg6
     {
         /// <summary>

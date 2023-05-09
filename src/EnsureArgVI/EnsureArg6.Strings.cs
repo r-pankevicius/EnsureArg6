@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using EnsureThat.Annotations;
-using JetBrains.Annotations;
 
 using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 

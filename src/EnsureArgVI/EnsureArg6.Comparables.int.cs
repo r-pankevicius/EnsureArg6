@@ -1,6 +1,4 @@
-﻿using JetBrains.Annotations;
-
-namespace EnsureArgVI
+﻿namespace EnsureArgVI
 {
     public static partial class EnsureArg6
     {
