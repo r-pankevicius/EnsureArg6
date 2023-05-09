@@ -1,12 +1,20 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI.Tests
 {
 	internal static class TestBase
 	{
+		internal static void AssertThrowsTheSameArgumentException<EnumT>(EnumT arg)
+			where EnumT : struct, Enum (
+				Action<EnumT> ensureArgAction,
+				Action<EnumT> ensureArg6Action)
+		{
+		}
+		
 		internal static void AssertThrowsTheSameArgumentException(
-			[NotNull] Action<object?> ensureArgAction,
-			[NotNull] Action<object?> ensureArg6Action)
+		[NotNull] Action<object?> ensureArgAction,
+		[NotNull] Action<object?> ensureArg6Action)
 		{
 			Exception? ensureArgException = null;
 			Exception? ensureArg6Exception = null;
