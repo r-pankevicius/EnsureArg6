@@ -1,5 +1,4 @@
-﻿#if false
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 
 using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
@@ -8,6 +7,7 @@ namespace EnsureArgVI
 {
     public static partial class EnsureArg6
     {
+#if false
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
         public static string IsNotNull([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
@@ -95,6 +95,6 @@ namespace EnsureArgVI
         [ContractAnnotation("value:null => halt")]
         public static string IsAllLettersOrDigits([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsAllLettersOrDigits(value, paramName);
+#endif
     }
 }
-#endif
