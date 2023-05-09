@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 
-namespace EnsureThat
+namespace EnsureArgVI
 {
     public static partial class EnsureArg6
     {

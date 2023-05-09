@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace EnsureThat
+namespace EnsureArgVI
 {
     using System;
 

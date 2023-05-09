@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 
-namespace EnsureThat
+namespace EnsureArgVI
 {
 	public static partial class EnsureArg6
 	{
