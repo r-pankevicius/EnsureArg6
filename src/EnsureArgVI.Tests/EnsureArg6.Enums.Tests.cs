@@ -20,7 +20,7 @@ namespace EnsureArgVI.Tests
 			//!CS8622
 			// Exclamation marks are used to suppress the warning about the parameter being null.
 			// What is strange because compiler sees that the parameter is not null.
-			TestBase.AssertThrowsTheSameArgumentException(EnumIsDefined, EnumIsDefined6);
+			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<Number>(EnumIsDefined, EnumIsDefined6);
 		}
 
 		[Fact]

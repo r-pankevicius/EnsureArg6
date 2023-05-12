@@ -1,27 +1,19 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-
-namespace EnsureArgVI.Tests
+﻿namespace EnsureArgVI.Tests
 {
 	internal static class TestBase
 	{
-		internal static void AssertThrowsTheSameArgumentException<EnumT>(EnumT arg)
-			where EnumT : struct, Enum (
-				Action<EnumT> ensureArgAction,
-				Action<EnumT> ensureArg6Action)
-		{
-		}
-		
-		internal static void AssertThrowsTheSameArgumentException(
-		[NotNull] Action<object?> ensureArgAction,
-		[NotNull] Action<object?> ensureArg6Action)
+
+#pragma warning disable CS8604 // Possible null reference argument.
+		internal static void AssertThrowsTheSameArgumentExceptionOnDefault<T>(
+			Action<T> ensureArgAction,
+			Action<T> ensureArg6Action)
 		{
 			Exception? ensureArgException = null;
 			Exception? ensureArg6Exception = null;
 
 			try
 			{
-				ensureArgAction(null);
+				ensureArgAction(default);
 			}
 			catch (ArgumentException ex1)
 			{
@@ -35,7 +27,7 @@ namespace EnsureArgVI.Tests
 
 			try
 			{
-				ensureArg6Action(null);
+				ensureArg6Action(default);
 			}
 			catch (ArgumentException ex1)
 			{
@@ -49,5 +41,7 @@ namespace EnsureArgVI.Tests
 
 			Assert.Equal(ensureArgException.Message, ensureArg6Exception.Message);
 		}
+#pragma warning restore CS8604 // Possible null reference argument.
+
 	}
 }
