@@ -8,20 +8,20 @@ namespace EnsureArgVI
 	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Strings.cs
 	public static partial class EnsureArg6
     {
-#if false
+#if true
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string IsNotNull([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
+        public static string IsNotNull([NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsNotNull(value, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string IsNotNullOrWhiteSpace([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
+        public static string IsNotNullOrWhiteSpace([NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsNotNullOrWhiteSpace(value, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string IsNotNullOrEmpty([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
+        public static string IsNotNullOrEmpty([NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsNotNullOrEmpty(value, paramName);
 
         public static string IsNotEmptyOrWhiteSpace(string value, [InvokerParameterName] string paramName = null)
@@ -32,12 +32,12 @@ namespace EnsureArgVI
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string HasLength([ValidatedNotNull, NotNull] string value, int expected, [InvokerParameterName] string paramName = null)
+        public static string HasLength([NotNull] string value, int expected, [InvokerParameterName] string paramName = null)
             => Ensure.String.HasLength(value, expected, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string HasLengthBetween([ValidatedNotNull, NotNull] string value, int minLength, int maxLength, [InvokerParameterName] string paramName = null)
+        public static string HasLengthBetween([NotNull] string value, int minLength, int maxLength, [InvokerParameterName] string paramName = null)
             => Ensure.String.HasLengthBetween(value, minLength, maxLength, paramName);
 
         [return: NotNull]
@@ -51,7 +51,7 @@ namespace EnsureArgVI
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
         [Obsolete("Use 'HasLength' instead. This will be removed in an upcoming version.")]
-        public static string SizeIs([ValidatedNotNull, NotNull] string value, int expected, [InvokerParameterName] string paramName = null)
+        public static string SizeIs([NotNull] string value, int expected, [InvokerParameterName] string paramName = null)
             => Ensure.String.SizeIs(value, expected, paramName);
 
         public static string Is(string value, string expected, [InvokerParameterName] string paramName = null)
@@ -79,22 +79,22 @@ namespace EnsureArgVI
             => Ensure.String.IsNotEqualTo(value, notExpected, comparison, paramName);
 
         [ContractAnnotation("value:null => halt")]
-        public static Guid IsGuid([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
+        public static Guid IsGuid([NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsGuid(value, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string StartsWith([ValidatedNotNull, NotNull] string value, [NotNull] string expectedStartsWith, [InvokerParameterName] string paramName = null)
+        public static string StartsWith([NotNull] string value, [NotNull] string expectedStartsWith, [InvokerParameterName] string paramName = null)
             => Ensure.String.StartsWith(value, expectedStartsWith, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string StartsWith([ValidatedNotNull, NotNull] string value, [NotNull] string expectedStartsWith, StringComparison comparisonType, [InvokerParameterName] string paramName = null)
+        public static string StartsWith([NotNull] string value, [NotNull] string expectedStartsWith, StringComparison comparisonType, [InvokerParameterName] string paramName = null)
             => Ensure.String.StartsWith(value, expectedStartsWith, comparisonType, paramName);
 
         [return: NotNull]
         [ContractAnnotation("value:null => halt")]
-        public static string IsAllLettersOrDigits([ValidatedNotNull, NotNull] string value, [InvokerParameterName] string paramName = null)
+        public static string IsAllLettersOrDigits([NotNull] string value, [InvokerParameterName] string paramName = null)
             => Ensure.String.IsAllLettersOrDigits(value, paramName);
 #endif
     }
