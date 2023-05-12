@@ -17,9 +17,6 @@ namespace EnsureArgVI.Tests
 			static void EnumIsDefined(Number number) => EnsureArg.EnumIsDefined(number, nameof(number));
 			static void EnumIsDefined6(Number number) => EnsureArg6.EnumIsDefined(number);
 
-			//!CS8622
-			// Exclamation marks are used to suppress the warning about the parameter being null.
-			// What is strange because compiler sees that the parameter is not null.
 			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<Number>(EnumIsDefined, EnumIsDefined6);
 		}
 

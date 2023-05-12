@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Types.cs
     public static partial class EnsureArg6
     {
         [return: NotNull]

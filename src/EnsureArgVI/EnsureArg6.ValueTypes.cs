@@ -3,6 +3,7 @@ using System;
 
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.ValueTypes.cs
     public static partial class EnsureArg6
     {
         public static bool IsTrue(bool value, [InvokerParameterName] string paramName = null)

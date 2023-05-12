@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.cs
 	public static partial class EnsureArg6
 	{
         public static T Is<T>(T value, T expected, [InvokerParameterName] string paramName = null) where T : IComparable<T>

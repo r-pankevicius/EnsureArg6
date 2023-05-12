@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace EnsureArgVI
 {
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Any.cs
 	public static partial class EnsureArg6
 	{
         [return: NotNull]

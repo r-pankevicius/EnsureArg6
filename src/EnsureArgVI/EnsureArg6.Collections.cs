@@ -8,6 +8,7 @@ using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Collections.cs
 	public static partial class EnsureArg6
 	{
         [return: NotNull]

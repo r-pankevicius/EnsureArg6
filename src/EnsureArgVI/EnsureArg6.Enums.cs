@@ -4,7 +4,8 @@ using System.Runtime.CompilerServices;
 
 namespace EnsureArgVI
 {
-    public static partial class EnsureArg6
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Enums.cs
+	public static partial class EnsureArg6
     {
         /// <summary>
         /// Confirms that the <paramref name="value"/> is defined in the enum <typeparamref name="T"/>.

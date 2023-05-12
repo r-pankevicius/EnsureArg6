@@ -1,6 +1,7 @@
 ﻿#if false
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.int.cs
     public static partial class EnsureArg6
     {
         public static int Is(int value, int expected, [InvokerParameterName] string paramName = null)

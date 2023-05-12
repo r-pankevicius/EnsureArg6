@@ -1,6 +1,7 @@
 ﻿#if false
 namespace EnsureArgVI
 {
+    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.decimal.cs
     public static partial class EnsureArg6
     {
         public static decimal Is(decimal value, decimal expected, [InvokerParameterName] string paramName = null)
