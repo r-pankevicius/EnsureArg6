@@ -1,29 +1,27 @@
-﻿#if false
-namespace EnsureArgVI
+﻿namespace EnsureArgVI
 {
     // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.int.cs
     public static partial class EnsureArg6
     {
-        public static int Is(int value, int expected, [InvokerParameterName] string paramName = null)
+        public static int Is(int value, int expected, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.Is(value, expected, paramName);
 
-        public static int IsNot(int value, int expected, [InvokerParameterName] string paramName = null)
+        public static int IsNot(int value, int expected, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNot(value, expected, paramName);
 
-        public static int IsLt(int value, int limit, [InvokerParameterName] string paramName = null)
+        public static int IsLt(int value, int limit, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsLt(value, limit, paramName);
 
-        public static int IsLte(int value, int limit, [InvokerParameterName] string paramName = null)
+        public static int IsLte(int value, int limit, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsLte(value, limit, paramName);
 
-        public static int IsGt(int value, int limit, [InvokerParameterName] string paramName = null)
+        public static int IsGt(int value, int limit, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsGt(value, limit, paramName);
 
-        public static int IsGte(int value, int limit, [InvokerParameterName] string paramName = null)
+        public static int IsGte(int value, int limit, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsGte(value, limit, paramName);
 
-        public static int IsInRange(int value, int min, int max, [InvokerParameterName] string paramName = null)
+        public static int IsInRange(int value, int min, int max, [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsInRange(value, min, max, paramName);
     }
 }
-#endif
