@@ -1,4 +1,7 @@
-﻿namespace EnsureArgVI
+﻿using EnsureThat;
+using System.Runtime.CompilerServices;
+
+namespace EnsureArgVI
 {
     // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.int.cs
     public static partial class EnsureArg6

@@ -1,13 +1,15 @@
-﻿using System;
+﻿using EnsureThat;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace EnsureArgVI
 {
     // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.cs
 	public static partial class EnsureArg6
 	{
-        public static T Is<T>(T value, T expected, [CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
+        public static T Is<T>(T value, T expected, [System.Runtime.CompilerServices.CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
             => EnsureArg.Is(value, expected, paramName);
 
         public static T Is<T>(T value, T expected, [NotNull] IComparer<T> comparer, [CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
