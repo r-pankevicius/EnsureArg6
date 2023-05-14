@@ -1,5 +1,4 @@
-﻿#if false
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureArgVI
@@ -8,134 +7,107 @@ namespace EnsureArgVI
     public static partial class EnsureArg6
     {
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsInt([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsInt(param, paramName);
+            => EnsureArg.IsInt(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsInt([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsInt(param, paramName);
+            => EnsureArg.IsInt(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsShort([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsShort(param, paramName);
+            => EnsureArg.IsShort(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsShort([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsShort(param, paramName);
+            => EnsureArg.IsShort(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsDecimal([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDecimal(param, paramName);
+            => EnsureArg.IsDecimal(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsDecimal([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDecimal(param, paramName);
+            => EnsureArg.IsDecimal(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsDouble([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDouble(param, paramName);
+            => EnsureArg.IsDouble(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsDouble([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDouble(param, paramName);
+            => EnsureArg.IsDouble(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsFloat([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsFloat(param, paramName);
+            => EnsureArg.IsFloat(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsFloat([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsFloat(param, paramName);
+            => EnsureArg.IsFloat(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsBool([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsBool(param, paramName);
+            => EnsureArg.IsBool(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsBool([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsBool(param, paramName);
+            => EnsureArg.IsBool(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsDateTime([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDateTime(param, paramName);
+            => EnsureArg.IsDateTime(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsDateTime([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsDateTime(param, paramName);
+            => EnsureArg.IsDateTime(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsString([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsString(param, paramName);
+            => EnsureArg.IsString(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsString([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsString(param, paramName);
+            => EnsureArg.IsString(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsOfType([NotNull] object param, Type expectedType, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsOfType(param, expectedType, paramName);
+            => EnsureArg.IsOfType(param, expectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsOfType([NotNull]Type param, Type expectedType, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsOfType(param, expectedType, paramName);
+            => EnsureArg.IsOfType(param, expectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsNotOfType([NotNull]object param, Type nonExpectedType, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsNotOfType(param, nonExpectedType, paramName);
+            => EnsureArg.IsNotOfType(param, nonExpectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsNotOfType([NotNull]Type param, Type nonExpectedType, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsNotOfType(param, nonExpectedType, paramName);
+            => EnsureArg.IsNotOfType(param, nonExpectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsAssignableToType([NotNull] object param, Type expectedType, [InvokerParameterName] string paramName = null)
-	        => Ensure.Type.IsAssignableToType(param, expectedType, paramName);
+	        => EnsureArg.IsAssignableToType(param, expectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsAssignableToType([NotNull]Type param, Type expectedType, [InvokerParameterName] string paramName = null)
-	        => Ensure.Type.IsAssignableToType(param, expectedType, paramName);
+	        => EnsureArg.IsAssignableToType(param, expectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsNotAssignableToType([NotNull]object param, Type nonExpectedType, [InvokerParameterName] string paramName = null)
-	        => Ensure.Type.IsNotAssignableToType(param, nonExpectedType, paramName);
+	        => EnsureArg.IsNotAssignableToType(param, nonExpectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsNotAssignableToType([NotNull]Type param, Type nonExpectedType, [InvokerParameterName] string paramName = null)
-	        => Ensure.Type.IsNotAssignableToType(param, nonExpectedType, paramName);
+	        => EnsureArg.IsNotAssignableToType(param, nonExpectedType, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static object IsClass([NotNull]object param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsClass(param, paramName);
+            => EnsureArg.IsClass(param, paramName);
 
         [return: NotNull]
-        [ContractAnnotation("param:null => halt")]
         public static Type IsClass([NotNull]Type param, [InvokerParameterName] string paramName = null)
-            => Ensure.Type.IsClass(param, paramName);
+            => EnsureArg.IsClass(param, paramName);
     }
 }
-#endif
