@@ -14,8 +14,8 @@ namespace EnsureArgVI.Tests
 		[Fact]
 		public void EnumIsDefined_Test()
 		{
-			static void Check(Number myParamPamPam) => EnsureArg.EnumIsDefined(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(Number myParamPamPam) => EnsureArg6.EnumIsDefined(myParamPamPam);
+			static Number Check(Number myParamPamPam) => EnsureArg.EnumIsDefined(myParamPamPam, nameof(myParamPamPam));
+			static Number Check6(Number myParamPamPam) => EnsureArg6.EnumIsDefined(myParamPamPam);
 
 			TestBase.AssertThrowsTheSameArgumentException(default(Number), Check, Check6);
 		}
@@ -23,8 +23,8 @@ namespace EnsureArgVI.Tests
 		[Fact]
 		public void EnumIsDefinedWithFlagsSupport_Test()
 		{
-			static void Check(Number myParamPamPam) => EnsureArg.EnumIsDefinedWithFlagsSupport(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(Number myParamPamPam) => EnsureArg6.EnumIsDefinedWithFlagsSupport(myParamPamPam);
+			static Number Check(Number myParamPamPam) => EnsureArg.EnumIsDefinedWithFlagsSupport(myParamPamPam, nameof(myParamPamPam));
+			static Number Check6(Number myParamPamPam) => EnsureArg6.EnumIsDefinedWithFlagsSupport(myParamPamPam);
 
 			TestBase.AssertThrowsTheSameArgumentException(default(Number), Check, Check6);
 		}

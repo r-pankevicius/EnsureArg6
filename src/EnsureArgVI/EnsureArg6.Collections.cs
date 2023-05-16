@@ -17,11 +17,15 @@ namespace EnsureArgVI
             => EnsureArg.HasItems(value, paramName);
 
         [return: NotNull]
-        public static ICollection<T> HasItems<T>([NotNull]ICollection<T> value, [CallerArgumentExpression("value")] string paramName = "")
+        public static ICollection<T> HasItems<T>(
+            [NotNull]ICollection<T> value,
+            [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.HasItems(value, paramName);
 
         [return: NotNull]
-        public static IReadOnlyCollection<T> HasItems<T>([NotNull]IReadOnlyCollection<T> value, [CallerArgumentExpression("value")] string paramName = "")
+        public static IReadOnlyCollection<T> HasItems<T>(
+            [NotNull]IReadOnlyCollection<T> value,
+            [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.HasItems(value, paramName);
 
         [return: NotNull]

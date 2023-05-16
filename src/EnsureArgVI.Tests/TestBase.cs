@@ -3,6 +3,17 @@
 	internal static class TestBase
 	{
 		internal static void AssertThrowsTheSameArgumentException<T>(
+			T paramAndRetVal,
+			Func<T, T> ensureArgFunc,
+			Func<T, T> ensureArg6Func)
+		{
+			AssertThrowsTheSameArgumentException_Impl(
+				paramAndRetVal,
+				(arg) => { _ = ensureArgFunc(arg); },
+				(arg) => { _ = ensureArg6Func(arg); });
+		}
+
+		private static void AssertThrowsTheSameArgumentException_Impl<T>(
 			T param,
 			Action<T> ensureArgAction,
 			Action<T> ensureArg6Action)
@@ -36,10 +47,11 @@
 			ensureArgException!.Message.Should().Be(ensureArg6Exception.Message, $"{nameof(ensureArgAction)} and {nameof(ensureArg6Action)} did not throw the same exception message.");
 		}
 
-		internal static void AssertThrowsTheSameArgumentException<T1, T2>(
-			T1 param1, T2 param2,
-			Action<T1, T2> ensureArgAction,
-			Action<T1, T2> ensureArg6Action)
+		/*
+		internal static void AssertThrowsTheSameArgumentException<T, T>(
+			T param1, T param2,
+			Action<T, T> ensureArgAction,
+			Action<T, T> ensureArg6Action)
 		{
 			Exception? ensureArgException = null;
 			Exception? ensureArg6Exception = null;
@@ -69,5 +81,18 @@
 			ensureArgException!.Should().BeOfType(ensureArg6Exception!.GetType(), $"{nameof(ensureArgAction)} and {nameof(ensureArg6Action)} did not throw the same exception type.");
 			ensureArgException!.Message.Should().Be(ensureArg6Exception.Message, $"{nameof(ensureArgAction)} and {nameof(ensureArg6Action)} did not throw the same exception message.");
 		}
+
+		internal static void AssertThrowsTheSameArgumentException<T>(
+			T param1,
+			T param2,
+			Func<T, T> ensureArgFunc,
+			Func<T, T> ensureArg6Func)
+		{
+			AssertThrowsTheSameArgumentException(
+				paramAndRetVal,
+				(arg) => { _ = ensureArgFunc(arg); },
+				(arg) => { _ = ensureArg6Func(arg); });
+		}
+		*/
 	}
 }
