@@ -5,15 +5,12 @@ namespace EnsureArgVI.Tests
 	public class EnsureArg6_Any_Tests
 	{
 		[Fact]
-		public void Test1()
+		public void IsNotNull_Test()
 		{
-			static void NoNullzPlz(object? param78y653) => EnsureArg.IsNotNull(param78y653, nameof(param78y653));
-			static void NoNullzPlz6(object? param78y653) => EnsureArg6.IsNotNull(param78y653);
+			static void Check(object? myParamPamPam) => EnsureArg.IsNotNull(myParamPamPam, nameof(myParamPamPam));
+			static void Check6(object? myParamPamPam) => EnsureArg6.IsNotNull(myParamPamPam);
 
-			//!CS8622
-			// Exclamation marks are used to suppress the warning about the parameter being null.
-			// What is strange because compiler sees that the parameter is not null.
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<object>(NoNullzPlz!, NoNullzPlz6!);
+			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<object?>(Check, Check6);
 		}
 	}
 }
