@@ -5,219 +5,22 @@ namespace EnsureArgVI.Tests
 	public class EnsureArg6_Collections_Tests
 	{
 		[Fact]
-		public void MethodName_Test()
+		public void HasItemsT_Test()
 		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
+			static void Check(int[] myParamPamPam) => EnsureArg.HasItems<int[]>(myParamPamPam, nameof(myParamPamPam));
+			static void Check6(int[] myParamPamPam) => EnsureArg6.HasItems<int[]>(myParamPamPam);
 
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException(Array.Empty<int>(), Check, Check6);
 		}
 
 		[Fact]
-		public void MethodName_Test()
+		public void HasItems_Test()
 		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
+			static void Check(int[] myParamPamPam) => EnsureArg.HasItems(myParamPamPam, nameof(myParamPamPam));
+			static void Check6(int[] myParamPamPam) => EnsureArg6.HasItems(myParamPamPam);
 
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException(Array.Empty<int>(), Check, Check6);
 		}
 
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
-
-		[Fact]
-		public void MethodName_Test()
-		{
-			static void Check(ParamType myParamPamPam) => EnsureArg.MethodName(myParamPamPam, nameof(myParamPamPam));
-			static void Check6(ParamType myParamPamPam) => EnsureArg6.MethodName(myParamPamPam);
-
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<ParamType>(Check, Check6);
-		}
 	}
 }

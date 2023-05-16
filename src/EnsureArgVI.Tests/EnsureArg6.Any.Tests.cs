@@ -10,7 +10,7 @@ namespace EnsureArgVI.Tests
 			static void Check(object? myParamPamPam) => EnsureArg.IsNotNull(myParamPamPam, nameof(myParamPamPam));
 			static void Check6(object? myParamPamPam) => EnsureArg6.IsNotNull(myParamPamPam);
 
-			TestBase.AssertThrowsTheSameArgumentExceptionOnDefault<object?>(Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException<object?>(param: null, Check, Check6);
 		}
 	}
 }
