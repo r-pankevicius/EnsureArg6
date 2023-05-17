@@ -171,5 +171,31 @@ namespace EnsureArg6.Tests
 			IList<string> param = Array.Empty<string>();
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
+
+		// 84
+		[Fact]
+		public void IDictionary_SizeIs_Test()
+		{
+			static IDictionary<int, string> Check(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
+			static IDictionary<int, string> Check6(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg6.SizeIs(myParamPamPam, 123);
+
+			IDictionary<int, string> param = new Dictionary<int, string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 88
+		[Fact]
+		public void IDictionary_LongSizeIs_Test()
+		{
+			static IDictionary<int, string> Check(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
+			static IDictionary<int, string> Check6(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg6.SizeIs(myParamPamPam, 123L);
+
+			IDictionary<int, string> param = new Dictionary<int, string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
 	}
 }
