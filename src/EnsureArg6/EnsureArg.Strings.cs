@@ -12,24 +12,24 @@ namespace EnsureArg6
     {
         [return: NotNull]
         public static string IsNotNull(
-            [NotNull] string value,
+            [NotNull] string? value,
 			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNotNull(value, paramName);
 
         [return: NotNull]
         public static string IsNotNullOrWhiteSpace(
-            [NotNull] string value,
+            [NotNull] string? value,
             [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNotNullOrWhiteSpace(value, paramName);
 
         [return: NotNull]
         public static string IsNotNullOrEmpty(
-            [NotNull] string value,
+            [NotNull] string? value,
             [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNotNullOrEmpty(value, paramName);
 
         public static string IsNotEmptyOrWhiteSpace(
-            string value,
+            string value?,
             [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNotEmptyOrWhiteSpace(value, paramName);
 
