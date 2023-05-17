@@ -1,4 +1,5 @@
 ﻿using EnsureThat;
+using System.Collections;
 
 namespace EnsureArg6.Tests
 {
@@ -84,7 +85,7 @@ namespace EnsureArg6.Tests
 		}
 
 		[Fact]
-		public void Array_IntSizeIs_Test()
+		public void Array_SizeIs_Test()
 		{
 			static string[] Check(string[] myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
 			static string[] Check6(string[] myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123);
@@ -104,7 +105,7 @@ namespace EnsureArg6.Tests
 		}
 
 		[Fact]
-		public void Collection_IntSizeIs_Test()
+		public void Collection_SizeIs_Test()
 		{
 			static ICollection<string> Check(ICollection<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
 			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123);
@@ -120,6 +121,26 @@ namespace EnsureArg6.Tests
 			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L);
 
 			ICollection<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		[Fact]
+		public void NonGenericCollection_SizeIs_Test()
+		{
+			static ICollection Check(ICollection myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
+			static ICollection Check6(ICollection myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
+
+			ICollection param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		[Fact]
+		public void NonGenericCollection_LongSizeIs_Test()
+		{
+			static ICollection Check(ICollection myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
+			static ICollection Check6(ICollection myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
+
+			ICollection param = Array.Empty<string>();
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
 	}
