@@ -84,6 +84,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(list, Check, Check6);
 		}
 
+		// 52
 		[Fact]
 		public void Array_SizeIs_Test()
 		{
@@ -94,6 +95,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(array, Check, Check6);
 		}
 
+		// 56
 		[Fact]
 		public void Array_LongSizeIs_Test()
 		{
@@ -104,26 +106,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(array, Check, Check6);
 		}
 
-		[Fact]
-		public void Collection_SizeIs_Test()
-		{
-			static ICollection<string> Check(ICollection<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
-			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123);
-
-			ICollection<string> param = Array.Empty<string>();
-			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
-		}
-
-		[Fact]
-		public void Collection_LongSizeIs_Test()
-		{
-			static ICollection<string> Check(ICollection<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
-			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L);
-
-			ICollection<string> param = Array.Empty<string>();
-			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
-		}
-
+		// 60
 		[Fact]
 		public void NonGenericCollection_SizeIs_Test()
 		{
@@ -134,6 +117,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
 
+		// 64
 		[Fact]
 		public void NonGenericCollection_LongSizeIs_Test()
 		{
@@ -141,6 +125,50 @@ namespace EnsureArg6.Tests
 			static ICollection Check6(ICollection myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
 
 			ICollection param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 68
+		[Fact]
+		public void Collection_SizeIs_Test()
+		{
+			static ICollection<string> Check(ICollection<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
+			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123);
+
+			ICollection<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 72
+		[Fact]
+		public void Collection_LongSizeIs_Test()
+		{
+			static ICollection<string> Check(ICollection<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
+			static ICollection<string> Check6(ICollection<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L);
+
+			ICollection<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 76
+		[Fact]
+		public void IList_SizeIs_Test()
+		{
+			static IList<string> Check(IList<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123, nameof(myParamPamPam));
+			static IList<string> Check6(IList<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123);
+
+			IList<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 80
+		[Fact]
+		public void ILIst_LongSizeIs_Test()
+		{
+			static IList<string> Check(IList<string> myParamPamPam) => EnsureArg.SizeIs(myParamPamPam, 123L, nameof(myParamPamPam));
+			static IList<string> Check6(IList<string> myParamPamPam) => EnsureArg6.SizeIs(myParamPamPam, 123L);
+
+			IList<string> param = Array.Empty<string>();
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
 	}
