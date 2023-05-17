@@ -197,5 +197,57 @@ namespace EnsureArg6.Tests
 			IDictionary<int, string> param = new Dictionary<int, string>();
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
+
+		// 92
+		[Fact]
+		public void IDictionary_ContainsKey_Test()
+		{
+			static IDictionary<int, string> Check(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg.ContainsKey(myParamPamPam, 123, nameof(myParamPamPam));
+			static IDictionary<int, string> Check6(IDictionary<int, string> myParamPamPam) =>
+				EnsureArg6.ContainsKey(myParamPamPam, 123);
+
+			IDictionary<int, string> param = new Dictionary<int, string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 96
+		[Fact]
+		public void IList_HasAny_Test()
+		{
+			static IList<string> Check(IList<string> myParamPamPam) =>
+				EnsureArg.HasAny(myParamPamPam, @string => false, nameof(myParamPamPam));
+			static IList<string> Check6(IList<string> myParamPamPam) =>
+				EnsureArg6.HasAny(myParamPamPam, @string => false);
+
+			IList<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 100
+		[Fact]
+		public void ICollection_HasAny_Test()
+		{
+			static ICollection<string> Check(ICollection<string> myParamPamPam) =>
+				EnsureArg.HasAny(myParamPamPam, @string => false, nameof(myParamPamPam));
+			static ICollection<string> Check6(ICollection<string> myParamPamPam) =>
+				EnsureArg6.HasAny(myParamPamPam, @string => false);
+
+			ICollection<string> param = Array.Empty<string>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 104
+		[Fact]
+		public void Array_HasAny_Test()
+		{
+			static int[] Check(int[] myParamPamPam) =>
+				EnsureArg.HasAny(myParamPamPam, @int => false, nameof(myParamPamPam));
+			static int[] Check6(int[] myParamPamPam) =>
+				EnsureArg6.HasAny(myParamPamPam, @int => false);
+
+			int[] param = Array.Empty<int>();
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
 	}
 }
