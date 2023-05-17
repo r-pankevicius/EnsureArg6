@@ -29,7 +29,7 @@ namespace EnsureArg6
             => EnsureArg.IsNotNullOrEmpty(value, paramName);
 
         public static string IsNotEmptyOrWhiteSpace(
-            string value?,
+            string? value,
             [CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNotEmptyOrWhiteSpace(value, paramName);
 
