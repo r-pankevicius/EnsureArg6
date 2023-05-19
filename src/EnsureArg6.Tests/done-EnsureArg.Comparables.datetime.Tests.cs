@@ -5,6 +5,7 @@ namespace EnsureArg6.Tests
 	public class EnsureArg6_Comparables_datetime_Tests
 	{
 		private static readonly DateTime Before = new (2000, 1, 1);
+		private static readonly DateTime Now = new(2023, 5, 19);
 		private static readonly DateTime After = new (2023, 12, 31);
 
 		[Fact]
@@ -61,15 +62,15 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(Before, After, Check, Check6);
 		}
 
-		/*
 		[Fact]
 		public void IsInRange_Test()
 		{
-			static DateTime Check(DateTime param1, DateTime param2) => EnsureArg.IsInRange(param1, param2, nameof(param1));
-			static DateTime Check6(DateTime param1, DateTime param2) => EnsureArg6.IsInRange(param1, param2);
+			static DateTime Check(DateTime param, DateTime before, DateTime after) =>
+				EnsureArg.IsInRange(param, before, after, nameof(param));
+			static DateTime Check6(DateTime param, DateTime before, DateTime after) =>
+				EnsureArg6.IsInRange(param, before, after);
 
-			TestBase.AssertThrowsTheSameArgumentException(Before, Before, Check, Check6);
+			TestBase.AssertInRangeThrowsTheSameArgumentException(Before, Now, After, Check, Check6);
 		}
-		*/
 	}
 }

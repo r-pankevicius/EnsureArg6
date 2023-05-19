@@ -32,6 +32,16 @@
 				() => { _ = ensureArg6Action(param1, param2); });
 		}
 
+		internal static void AssertInRangeThrowsTheSameArgumentException<T>(
+			T param, T min, T max,
+			Func<T, T, T, T> ensureInRangeArgAction,
+			Func<T, T, T, T> ensureInRangeArg6Action)
+		{
+			AssertThrowsTheSameArgumentException_Impl(
+				() => { _ = ensureInRangeArgAction(param, min, max); },
+				() => { _ = ensureInRangeArg6Action(param, min, max); });
+		}
+
 		private static void AssertThrowsTheSameArgumentException_Impl(
 			Action ensureArgAction,
 			Action ensureArg6Action)
