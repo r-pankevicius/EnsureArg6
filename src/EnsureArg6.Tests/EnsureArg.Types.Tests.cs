@@ -1,4 +1,7 @@
 ﻿using EnsureThat;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+using System.Security.Cryptography;
+using System;
 
 namespace EnsureArg6.Tests
 {
@@ -144,28 +147,26 @@ namespace EnsureArg6.Tests
 		{
 			static object Check(object myParamPamPam) => EnsureArg.IsString(myParamPamPam, nameof(myParamPamPam));
 			static object Check6(object myParamPamPam) => EnsureArg6.IsString(myParamPamPam);
-
 			TestBase.AssertThrowsTheSameArgumentException((object)1, Check, Check6);
 		}
 
+		// Expected ensureArgException!.Message to be "The param is not of expected type. Expected: 'System.Decimal'. Got: 'System.Boolean'. (Parameter '@object')" with a length of 107 because ensureArgAction and ensureArg6Action did not throw the same exception message., but "The param is not of expected type. Expected: 'System.Decimal'. Got: 'System.Boolean'. (Parameter 'object')" has a length of 106, differs near "obj" (index 98).
 		[Fact]
 		public void IsOfType_InstanceTest()
 		{
 			static object Check(object @object, Type expectedType) => EnsureArg.IsOfType(@object, expectedType, nameof(@object));
 			static object Check6(object @object, Type expectedType) => EnsureArg6.IsOfType(@object, expectedType);
-
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(decimal), Check, Check6);
 		}
-
 		[Fact]
 		public void IsOfType_TypeTest()
 		{
 			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsOfType(type, nonExpectedType, nameof(type));
 			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsOfType(type, nonExpectedType);
-
 			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(int), Check, Check6);
 		}
 
+	    // Expected ensureArgException!.Message to be "The param was expected to not be of the type: 'System.Boolean'. But it was. (Parameter '@object')" with a length of 97 because ensureArgAction and ensureArg6Action did not throw the same exception message., but "The param was expected to not be of the type: 'System.Boolean'. But it was. (Parameter 'object')" has a length of 96, differs near "obj" (index 88).
 		[Fact]
 		public void IsNotOfType_InstanceTest()
 		{
@@ -175,6 +176,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(bool), Check, Check6);
 		}
 
+		// Expected ensureArgException not to be < null > because ensureArgAction did not throw ..
 		[Fact]
 		public void IsNotOfType_TypeTest()
 		{
@@ -203,6 +205,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(string), typeof(object), Check, Check6);
 		}
 
+		//     Expected ensureArgException not to be <null> because ensureArgAction did not throw..
 		[Fact]
 		public void IsNotAssignableToType_InstanceTest()
 		{
@@ -212,6 +215,7 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)"string", typeof(int), Check, Check6);
 		}
 
+		//    Expected ensureArgException not to be <null> because ensureArgAction did not throw..
 		[Fact]
 		public void IsNotAssignableToType_TypeTest()
 		{
