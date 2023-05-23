@@ -62,9 +62,9 @@ namespace EnsureArg6.Tests
 		public void IsInRange_Test()
 		{
 			static decimal Check(decimal param, decimal before, decimal after) =>
-				EnsureArg.IsInRange(param, before, after, nameof(param));
+				EnsureArg.IsInRange<decimal>(param, before, after, nameof(param));
 			static decimal Check6(decimal param, decimal before, decimal after) =>
-				EnsureArg6.IsInRange(param, before, after);
+				EnsureArg6.IsInRange<decimal>(param, before, after);
 
 			TestBase.AssertInRangeThrowsTheSameArgumentException(2.50m, 2.99m, 3.50m, Check, Check6);
 		}
