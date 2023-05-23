@@ -1,4 +1,5 @@
 ﻿using EnsureThat;
+using System;
 
 namespace EnsureArg6.Tests
 {
@@ -148,56 +149,50 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException((object)1, Check, Check6);
 		}
 
-		// ???????????????
 		[Fact]
-		public void IsOfType_Test()
+		public void IsOfType_InstanceTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static object Check(object @object, Type expectedType) => EnsureArg.IsOfType(@object, expectedType, nameof(@object));
+			static object Check6(object @object, Type expectedType) => EnsureArg6.IsOfType(@object, expectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(decimal), Check, Check6);
 		}
 
-		//public Type IsOfType_TypeTest([NotNull] Type param, Type expectedType, [CallerArgumentExpression("param")] string paramName = "")
-		//	=> EnsureArg.IsOfType(param, expectedType, paramName);
 		[Fact]
 		public void IsOfType_TypeTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsOfType(type, nonExpectedType, nameof(type));
+			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsOfType(type, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(int), Check, Check6);
 		}
 
-		//public object IsNotOfType_Test([NotNull] object param, Type nonExpectedType, [CallerArgumentExpression("param")] string paramName = "")
-		//	=> EnsureArg.IsNotOfType(param, nonExpectedType, paramName);
 		[Fact]
-		public void IsNotOfType_Test()
+		public void IsNotOfType_InstanceTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static object Check(object @object, Type nonExpectedType) => EnsureArg.IsNotOfType(@object, nonExpectedType, nameof(@object));
+			static object Check6(object @object, Type nonExpectedType) => EnsureArg6.IsNotOfType(@object, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(bool), Check, Check6);
 		}
 
-		//public Type IsNotOfType_TypeTest([NotNull] Type param, Type nonExpectedType, [CallerArgumentExpression("param")] string paramName = "")
-		//	=> EnsureArg.IsNotOfType(param, nonExpectedType, paramName);
 		[Fact]
 		public void IsNotOfType_TypeTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsNotOfType(type, nonExpectedType, nameof(type));
+			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsNotOfType(type, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(int), Check, Check6);
 		}
 
+		/*
 		//public object IsAssignableToType_InstanceTest([NotNull] object param, Type expectedType, [CallerArgumentExpression("param")] string paramName = "")
 		//	=> EnsureArg.IsAssignableToType(param, expectedType, paramName);
 		[Fact]
 		public void IsAssignableToType_InstanceTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static object Check(object @object, Type type) => EnsureArg.IsAssignableToType(myParamPamPam, nameof(myParamPamPam));
+			static object Check6(object @object, Type type) => EnsureArg6.IsAssignableToType(myParamPamPam);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
@@ -207,8 +202,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsAssignableToType_TypeTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static Type Check(Type type, Type expectedType) => EnsureArg.IsAssignableToType(type, expectedType, nameof(type));
+			static Type Check6(Type type, Type expectedType) => EnsureArg6.IsAssignableToType(type, expectedType);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
@@ -218,8 +213,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsNotAssignableToType_InstanceTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static object Check(object @object, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(myParamPamPam, nameof(myParamPamPam));
+			static object Check6(object @object, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(@object, nonExpectedType);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
@@ -229,8 +224,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsNotAssignableToType_TypeTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(type, nonExpectedType, nameof(type));
+			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(type, nonExpectedType);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
@@ -240,8 +235,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsClass_InstanceTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static bool Check(bool myParamPamPam) => EnsureArg.IsClass(myParamPamPam, nameof(myParamPamPam));
+			static bool Check6(bool myParamPamPam) => EnsureArg6.IsClass(myParamPamPam);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
@@ -251,10 +246,11 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsClass_TypeTest()
 		{
-			static bool Check(bool myParamPamPam) => EnsureArg.IsTrue(myParamPamPam, nameof(myParamPamPam));
-			static bool Check6(bool myParamPamPam) => EnsureArg6.IsTrue(myParamPamPam);
+			static bool Check(bool myParamPamPam) => EnsureArg.IsClass(myParamPamPam, nameof(myParamPamPam));
+			static bool Check6(bool myParamPamPam) => EnsureArg6.IsClass(myParamPamPam);
 
 			TestBase.AssertThrowsTheSameArgumentException(false, Check, Check6);
 		}
+		*/
 	}
 }
