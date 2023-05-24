@@ -189,12 +189,10 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsAssignableToType_InstanceTest()
 		{
-			// The param is not assignable to the expected type. Expected: 'System.String'. Got: 'System.Int32'. (Parameter '@object')
-			static object Check(object @object, Type expectedType) => EnsureArg.IsAssignableToType(@object, expectedType, nameof(@object));
-			// The param is not assignable to the expected type. Expected: 'System.String'. Got: 'System.Int32'. (Parameter 'object')"
-			static object Check6(object @object, Type expectedType) => EnsureArg6.IsAssignableToType(@object, expectedType);
+			static object Check(object obj, Type expectedType) => EnsureArg.IsAssignableToType(obj, expectedType, nameof(obj));
+			static object Check6(object obj, Type expectedType) => EnsureArg6.IsAssignableToType(obj, expectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException_Type((object)1, typeof(int), Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type((object)1, typeof(string), Check, Check6);
 		}
 
 		[Fact]
