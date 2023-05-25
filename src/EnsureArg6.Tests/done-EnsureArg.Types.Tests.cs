@@ -181,7 +181,7 @@ namespace EnsureArg6.Tests
 			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsNotOfType(type, nonExpectedType, nameof(type));
 			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsNotOfType(type, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(int), Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(bool), Check, Check6);
 		}
 
 		[Fact]
@@ -203,24 +203,22 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(string), typeof(object), Check, Check6);
 		}
 
-		//     Expected ensureArgException not to be <null> because ensureArgAction did not throw..
 		[Fact]
 		public void IsNotAssignableToType_InstanceTest()
 		{
 			static object Check(object obj, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(obj, nonExpectedType, nameof(obj));
 			static object Check6(object obj, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(obj, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException_Type((object)"string", typeof(int), Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type((object)"string", typeof(string), Check, Check6);
 		}
 
-		//    Expected ensureArgException not to be <null> because ensureArgAction did not throw..
 		[Fact]
 		public void IsNotAssignableToType_TypeTest()
 		{
 			static Type Check(Type type, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(type, nonExpectedType, nameof(type));
 			static Type Check6(Type type, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(type, nonExpectedType);
 
-			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(string), typeof(int), Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(string), typeof(string), Check, Check6);
 		}
 
 		[Fact]
