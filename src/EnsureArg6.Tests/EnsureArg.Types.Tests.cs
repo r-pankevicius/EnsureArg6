@@ -150,12 +150,11 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException((object)1, Check, Check6);
 		}
 
-		// Expected ensureArgException!.Message to be "The param is not of expected type. Expected: 'System.Decimal'. Got: 'System.Boolean'. (Parameter '@object')" with a length of 107 because ensureArgAction and ensureArg6Action did not throw the same exception message., but "The param is not of expected type. Expected: 'System.Decimal'. Got: 'System.Boolean'. (Parameter 'object')" has a length of 106, differs near "obj" (index 98).
 		[Fact]
 		public void IsOfType_InstanceTest()
 		{
-			static object Check(object @object, Type expectedType) => EnsureArg.IsOfType(@object, expectedType, nameof(@object));
-			static object Check6(object @object, Type expectedType) => EnsureArg6.IsOfType(@object, expectedType);
+			static object Check(object obj, Type expectedType) => EnsureArg.IsOfType(obj, expectedType, nameof(obj));
+			static object Check6(object obj, Type expectedType) => EnsureArg6.IsOfType(obj, expectedType);
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(decimal), Check, Check6);
 		}
 		[Fact]
@@ -166,12 +165,11 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(bool), typeof(int), Check, Check6);
 		}
 
-	    // Expected ensureArgException!.Message to be "The param was expected to not be of the type: 'System.Boolean'. But it was. (Parameter '@object')" with a length of 97 because ensureArgAction and ensureArg6Action did not throw the same exception message., but "The param was expected to not be of the type: 'System.Boolean'. But it was. (Parameter 'object')" has a length of 96, differs near "obj" (index 88).
 		[Fact]
 		public void IsNotOfType_InstanceTest()
 		{
-			static object Check(object @object, Type nonExpectedType) => EnsureArg.IsNotOfType(@object, nonExpectedType, nameof(@object));
-			static object Check6(object @object, Type nonExpectedType) => EnsureArg6.IsNotOfType(@object, nonExpectedType);
+			static object Check(object obj, Type nonExpectedType) => EnsureArg.IsNotOfType(obj, nonExpectedType, nameof(obj));
+			static object Check6(object obj, Type nonExpectedType) => EnsureArg6.IsNotOfType(obj, nonExpectedType);
 
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)false, typeof(bool), Check, Check6);
 		}
@@ -209,8 +207,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsNotAssignableToType_InstanceTest()
 		{
-			static object Check(object @object, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(@object, nonExpectedType, nameof(@object));
-			static object Check6(object @object, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(@object, nonExpectedType);
+			static object Check(object obj, Type nonExpectedType) => EnsureArg.IsNotAssignableToType(obj, nonExpectedType, nameof(obj));
+			static object Check6(object obj, Type nonExpectedType) => EnsureArg6.IsNotAssignableToType(obj, nonExpectedType);
 
 			TestBase.AssertThrowsTheSameArgumentException_Type((object)"string", typeof(int), Check, Check6);
 		}
@@ -228,8 +226,8 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void IsClass_InstanceTest()
 		{
-			static object Check(object @object) => EnsureArg.IsClass(@object, nameof(@object));
-			static object Check6(object @object) => EnsureArg6.IsClass(@object);
+			static object Check(object obj) => EnsureArg.IsClass(obj, nameof(obj));
+			static object Check6(object obj) => EnsureArg6.IsClass(obj);
 
 			TestBase.AssertThrowsTheSameArgumentException((object)1, Check, Check6);
 		}
