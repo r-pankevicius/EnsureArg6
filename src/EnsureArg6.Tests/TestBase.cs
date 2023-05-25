@@ -33,14 +33,14 @@
 		}
 
 		internal static void AssertThrowsTheSameArgumentException_Type<T, TType>(
-			T @object, TType type,
+			T obj, TType type,
 			Func<T, TType, T> ensureArgAction,
 			Func<T, TType, T> ensureArg6Action)
 				where TType : Type
 		{
 			AssertThrowsTheSameArgumentException_Impl(
-				() => { _ = ensureArgAction(@object, type); },
-				() => { _ = ensureArg6Action(@object, type); });
+				() => { _ = ensureArgAction(obj, type); },
+				() => { _ = ensureArg6Action(obj, type); });
 		}
 
 		internal static void AssertInRangeThrowsTheSameArgumentException<T>(
