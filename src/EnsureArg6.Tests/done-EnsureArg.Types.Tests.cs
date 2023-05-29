@@ -199,8 +199,7 @@ namespace EnsureArg6.Tests
 			static Type Check(Type type, Type expectedType) => EnsureArg.IsAssignableToType(type, expectedType, nameof(type));
 			static Type Check6(Type type, Type expectedType) => EnsureArg6.IsAssignableToType(type, expectedType);
 
-			// typeof(object).IsAssignableFrom(typeof(string)) == true
-			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(string), typeof(object), Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException_Type(typeof(object), typeof(string), Check, Check6);
 		}
 
 		[Fact]

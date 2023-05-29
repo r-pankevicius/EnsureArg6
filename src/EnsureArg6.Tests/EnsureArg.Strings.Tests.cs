@@ -14,8 +14,28 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
 
-		// IsNotNullOrWhiteSpace
-		// IsNotNullOrEmpty
+		[Fact]
+		public void IIsNotNullOrEmpty_Test()
+		{
+			static string Check(string? myParamPamPam) => EnsureArg.IsNotNullOrEmpty(myParamPamPam, nameof(myParamPamPam));
+			static string Check6(string? myParamPamPam) => EnsureArg6.IsNotNullOrEmpty(myParamPamPam);
+
+			string? param = "";
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		[Fact]
+		public void IsNotNullOrWhiteSpace_Test()
+		{
+			static string Check(string? myParamPamPam) => EnsureArg.IsNotNullOrWhiteSpace(myParamPamPam, nameof(myParamPamPam));
+			static string Check6(string? myParamPamPam) => EnsureArg6.IsNotNullOrWhiteSpace(myParamPamPam);
+
+			string? param = "    ";
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		// 
+		// 
 		// IsNotEmptyOrWhiteSpace
 		// IsNotEmpty
 		// HasLength
