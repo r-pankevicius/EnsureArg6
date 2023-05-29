@@ -12,6 +12,16 @@
 				() => { _ = ensureArg6Func(paramAndRetVal); });
 		}
 
+		internal static void AssertThrowsTheSameArgumentException2<TParam, TRetval>(
+			TParam param,
+			Func<TParam, TRetval> ensureArgFunc,
+			Func<TParam, TRetval> ensureArg6Func)
+		{
+			AssertThrowsTheSameArgumentException_Impl(
+				() => { _ = ensureArgFunc(param); },
+				() => { _ = ensureArg6Func(param); });
+		}
+
 		internal static void AssertThrowsTheSameArgumentException<T>(
 			T param1, T param2,
 			Action<T, T> ensureArgAction,

@@ -179,7 +179,6 @@ namespace EnsureArg6.Tests
 			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
 		}
 
-		/*
 		[Fact]
 		public void IsGuid_Test()
 		{
@@ -187,9 +186,8 @@ namespace EnsureArg6.Tests
 			static Guid Check6(string myParamPamPam) => EnsureArg6.IsGuid(myParamPamPam);
 
 			string param = "abc";
-			TestBase.AssertThrowsTheSameArgumentException<Guid>(param, () => Check(param), () => Check6(param));
+			TestBase.AssertThrowsTheSameArgumentException2<string, Guid>(param, Check, Check6);
 		}
-		*/
 
 		// StartsWith
 		// StartsWith_WithStringComparison
