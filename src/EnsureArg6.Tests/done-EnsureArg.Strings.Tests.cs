@@ -186,11 +186,37 @@ namespace EnsureArg6.Tests
 			static Guid Check6(string myParamPamPam) => EnsureArg6.IsGuid(myParamPamPam);
 
 			string param = "abc";
-			TestBase.AssertThrowsTheSameArgumentException2<string, Guid>(param, Check, Check6);
+			TestBase.AssertThrowsTheSameArgumentException2(param, Check, Check6);
 		}
 
-		// StartsWith
-		// StartsWith_WithStringComparison
-		// IsAllLettersOrDigits
+		[Fact]
+		public void StartsWith_Test()
+		{
+			static string Check(string myParamPamPam) => EnsureArg.StartsWith(myParamPamPam, "UK", nameof(myParamPamPam));
+			static string Check6(string myParamPamPam) => EnsureArg6.StartsWith(myParamPamPam, "UK");
+
+			string param = "ukr";
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		[Fact]
+		public void StartsWith_WithStringComparison_Test()
+		{
+			static string Check(string myParamPamPam) => EnsureArg.StartsWith(myParamPamPam, "j", StringComparison.OrdinalIgnoreCase, nameof(myParamPamPam));
+			static string Check6(string myParamPamPam) => EnsureArg6.StartsWith(myParamPamPam, "j", StringComparison.OrdinalIgnoreCase);
+
+			string param = "ukr";
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
+
+		[Fact]
+		public void IsAllLettersOrDigits_Test()
+		{
+			static string Check(string myParamPamPam) => EnsureArg.IsAllLettersOrDigits(myParamPamPam, nameof(myParamPamPam));
+			static string Check6(string myParamPamPam) => EnsureArg6.IsAllLettersOrDigits(myParamPamPam);
+
+			string param = "123abc#";
+			TestBase.AssertThrowsTheSameArgumentException(param, Check, Check6);
+		}
 	}
 }
