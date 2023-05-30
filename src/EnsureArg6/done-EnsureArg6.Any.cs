@@ -10,7 +10,8 @@ namespace EnsureArg6
         [return: NotNull]
         public static T IsNotNull<T>(
             [NotNull] T? value,
+			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : class
-            => EnsureArg.IsNotNull(value, paramName);
+            => EnsureArg.IsNotNull(value, paramName, optsFn);
     }
 }

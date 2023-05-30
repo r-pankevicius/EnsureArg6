@@ -16,8 +16,11 @@ namespace EnsureArg6
         public static T IsNotDefault<T>(T value, [CallerArgumentExpression("value")] string paramName = "") where T : struct
             => Ensure.Any.IsNotDefault(value, paramName);
 
-        public static T? IsNotNull<T>(T? value, [CallerArgumentExpression("value")] string paramName = "") where T : struct
-            => Ensure.Any.IsNotNull(value, paramName);
+        public static T? IsNotNull<T>(
+            T? value,
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "") where T : struct
+            => Ensure.Any.IsNotNull(value, paramName, optsFn);
 
         public static Guid IsNotEmpty(Guid value, [CallerArgumentExpression("value")] string paramName = "")
             => Ensure.Guid.IsNotEmpty(value, paramName);

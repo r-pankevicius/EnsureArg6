@@ -13,8 +13,9 @@ namespace EnsureArg6
         [return: NotNull]
         public static string IsNotNull(
             [NotNull] string? value,
+			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotNull(value, paramName);
+            => EnsureArg.IsNotNull(value, paramName, optsFn);
 
         [return: NotNull]
         public static string IsNotNullOrWhiteSpace(
