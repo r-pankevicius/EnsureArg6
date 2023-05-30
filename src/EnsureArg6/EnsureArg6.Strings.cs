@@ -1,9 +1,8 @@
 ﻿using EnsureThat;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
-
-using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 
 namespace EnsureArg6
 {
@@ -22,26 +21,26 @@ namespace EnsureArg6
             [NotNull] string? value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotNullOrWhiteSpace(value, paramName);
+            => EnsureArg.IsNotNullOrWhiteSpace(value, paramName, optsFn);
 
         [return: NotNull]
         public static string IsNotNullOrEmpty(
             [NotNull] string? value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotNullOrEmpty(value, paramName);
+            => EnsureArg.IsNotNullOrEmpty(value, paramName, optsFn);
 
         public static string IsNotEmptyOrWhiteSpace(
             string? value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotEmptyOrWhiteSpace(value, paramName);
+            => EnsureArg.IsNotEmptyOrWhiteSpace(value, paramName, optsFn);
 
         public static string IsNotEmpty(
             string value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotEmpty(value, paramName);
+            => EnsureArg.IsNotEmpty(value, paramName, optsFn);
 
         [return: NotNull]
         public static string HasLength(
@@ -49,7 +48,7 @@ namespace EnsureArg6
             int expected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.HasLength(value, expected, paramName);
+            => EnsureArg.HasLength(value, expected, paramName, optsFn);
 
         [return: NotNull]
         public static string HasLengthBetween(
@@ -57,7 +56,7 @@ namespace EnsureArg6
             int minLength, int maxLength,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.HasLengthBetween(value, minLength, maxLength, paramName);
+            => EnsureArg.HasLengthBetween(value, minLength, maxLength, paramName, optsFn);
 
         [return: NotNull]
         public static string Matches(
@@ -65,7 +64,7 @@ namespace EnsureArg6
             [NotNull] string regexPattern,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.Matches(value, regexPattern, paramName);
+            => EnsureArg.Matches(value, regexPattern, paramName, optsFn);
 
         [return: NotNull]
         public static string Matches(
@@ -73,14 +72,14 @@ namespace EnsureArg6
             [NotNull] Regex match,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.Matches(value, match, paramName);
+            => EnsureArg.Matches(value, match, paramName, optsFn);
 
         public static string Is(
             string value,
             string expected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.Is(value, expected, paramName);
+            => EnsureArg.Is(value, expected, paramName, optsFn);
 
         public static string Is(
             string value,
@@ -88,14 +87,14 @@ namespace EnsureArg6
             StringComparison comparison,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.Is(value, expected, comparison, paramName);
+            => EnsureArg.Is(value, expected, comparison, paramName, optsFn);
 
         public static string IsEqualTo(
             string value,
             string expected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsEqualTo(value, expected, paramName);
+            => EnsureArg.IsEqualTo(value, expected, paramName, optsFn);
 
         public static string IsEqualTo(
             string value,
@@ -103,14 +102,14 @@ namespace EnsureArg6
             StringComparison comparison,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsEqualTo(value, expected, comparison, paramName);
+            => EnsureArg.IsEqualTo(value, expected, comparison, paramName, optsFn);
 
         public static string IsNot(
             string value,
             string notExpected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNot(value, notExpected, paramName);
+            => EnsureArg.IsNot(value, notExpected, paramName, optsFn);
 
         public static string IsNot(
             string value,
@@ -118,14 +117,14 @@ namespace EnsureArg6
             StringComparison comparison,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNot(value, notExpected, comparison, paramName);
+            => EnsureArg.IsNot(value, notExpected, comparison, paramName, optsFn);
 
         public static string IsNotEqualTo(
             string value,
             string notExpected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotEqualTo(value, notExpected, paramName);
+            => EnsureArg.IsNotEqualTo(value, notExpected, paramName, optsFn);
 
         public static string IsNotEqualTo(
             string value,
@@ -133,13 +132,13 @@ namespace EnsureArg6
             StringComparison comparison,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsNotEqualTo(value, notExpected, comparison, paramName);
+            => EnsureArg.IsNotEqualTo(value, notExpected, comparison, paramName, optsFn);
 
         public static Guid IsGuid(
             [NotNull] string value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsGuid(value, paramName);
+            => EnsureArg.IsGuid(value, paramName, optsFn);
 
         [return: NotNull]
         public static string StartsWith(
@@ -147,7 +146,7 @@ namespace EnsureArg6
             [NotNull] string expectedStartsWith,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.StartsWith(value, expectedStartsWith, paramName);
+            => EnsureArg.StartsWith(value, expectedStartsWith, paramName, optsFn);
 
         [return: NotNull]
         public static string StartsWith(
@@ -156,13 +155,13 @@ namespace EnsureArg6
             StringComparison comparisonType,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.StartsWith(value, expectedStartsWith, comparisonType, paramName);
+            => EnsureArg.StartsWith(value, expectedStartsWith, comparisonType, paramName, optsFn);
 
         [return: NotNull]
         public static string IsAllLettersOrDigits(
             [NotNull] string value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsAllLettersOrDigits(value, paramName);
+            => EnsureArg.IsAllLettersOrDigits(value, paramName, optsFn);
     }
 }

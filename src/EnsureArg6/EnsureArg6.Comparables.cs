@@ -14,7 +14,7 @@ namespace EnsureArg6
             T expected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.Is(value, expected, paramName);
+            => EnsureArg.Is(value, expected, paramName, optsFn);
 
         public static T Is<T>(
             T value,
@@ -22,14 +22,14 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.Is(value, expected, comparer, paramName);
+            => EnsureArg.Is(value, expected, comparer, paramName, optsFn);
 
         public static T IsNot<T>(
             T value,
             T expected,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsNot(value, expected, paramName);
+            => EnsureArg.IsNot(value, expected, paramName, optsFn);
 
         public static T IsNot<T>(
             T value,
@@ -37,14 +37,14 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsNot(value, expected, comparer, paramName);
+            => EnsureArg.IsNot(value, expected, comparer, paramName, optsFn);
 
         public static T IsLt<T>(
             T value,
             T limit,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsLt(value, limit, paramName);
+            => EnsureArg.IsLt(value, limit, paramName, optsFn);
 
         public static T IsLt<T>(
             T value,
@@ -52,14 +52,14 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsLt(value, limit, comparer, paramName);
+            => EnsureArg.IsLt(value, limit, comparer, paramName, optsFn);
 
         public static T IsLte<T>(
             T value,
             T limit,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsLte(value, limit, paramName);
+            => EnsureArg.IsLte(value, limit, paramName, optsFn);
 
         public static T IsLte<T>(
             T value,
@@ -67,14 +67,14 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsLte(value, limit, comparer, paramName);
+            => EnsureArg.IsLte(value, limit, comparer, paramName, optsFn);
 
         public static T IsGt<T>(
             T value,
             T limit,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsGt(value, limit, paramName);
+            => EnsureArg.IsGt(value, limit, paramName, optsFn);
 
         public static T IsGt<T>(
             T value,
@@ -82,14 +82,14 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsGt(value, limit, comparer, paramName);
+            => EnsureArg.IsGt(value, limit, comparer, paramName, optsFn);
 
         public static T IsGte<T>(
             T value,
             T limit,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsGte(value, limit, paramName);
+            => EnsureArg.IsGte(value, limit, paramName, optsFn);
 
         public static T IsGte<T>(
             T value,
@@ -97,7 +97,7 @@ namespace EnsureArg6
             [NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsGte(value, limit, comparer, paramName);
+            => EnsureArg.IsGte(value, limit, comparer, paramName, optsFn);
 
         public static T IsInRange<T>(
             T value,
@@ -105,7 +105,7 @@ namespace EnsureArg6
             T max,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsInRange(value, min, max, paramName);
+            => EnsureArg.IsInRange(value, min, max, paramName, optsFn);
 
         public static T IsInRange<T>(
             T value,
@@ -114,6 +114,6 @@ namespace EnsureArg6
 			[NotNull] IComparer<T> comparer,
 			OptsFn? optsFn = null,
             [CallerArgumentExpression("value")] string paramName = "") where T : IComparable<T>
-            => EnsureArg.IsInRange(value, min, max, comparer, paramName);
+            => EnsureArg.IsInRange(value, min, max, comparer, paramName, optsFn);
     }
 }

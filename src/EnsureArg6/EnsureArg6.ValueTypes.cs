@@ -10,17 +10,17 @@ namespace EnsureArg6
         public static bool IsTrue(bool value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsTrue(value, paramName);
+            => EnsureArg.IsTrue(value, paramName, optsFn);
 
         public static bool IsFalse(bool value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => EnsureArg.IsFalse(value, paramName);
+            => EnsureArg.IsFalse(value, paramName, optsFn);
 
         public static T IsNotDefault<T>(T value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "") where T : struct
-            => Ensure.Any.IsNotDefault(value, paramName);
+            => Ensure.Any.IsNotDefault(value, paramName, optsFn);
 
         public static T? IsNotNull<T>(
             T? value,
@@ -31,6 +31,6 @@ namespace EnsureArg6
         public static Guid IsNotEmpty(Guid value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string paramName = "")
-            => Ensure.Guid.IsNotEmpty(value, paramName);
+            => Ensure.Guid.IsNotEmpty(value, paramName, optsFn);
     }
 }

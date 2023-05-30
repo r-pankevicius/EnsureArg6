@@ -9,9 +9,11 @@ namespace EnsureArg6
     {
         /// <summary>
         /// Confirms that the <paramref name="value"/> is defined in the enum <typeparamref name="T"/>.
+        /// <para>
         /// Note that just like <see cref="Enum.IsDefined(Type, object)"/>,
         /// <see cref="FlagsAttribute"/> based enums may be valid combination of defined values, but if the combined value
         /// itself is not named an error will be raised. Avoid usage with <see cref="FlagsAttribute"/> enums.
+        /// </para>
         /// </summary>
         /// <example>
         /// Flags example:
@@ -31,7 +33,7 @@ namespace EnsureArg6
             T value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
-            => EnsureArg.EnumIsDefined(value, paramName);
+            => EnsureArg.EnumIsDefined(value, paramName, optsFn);
 
         /// <summary>
         /// Confirms that the <paramref name="value"/> is defined in the enum <typeparamref name="T"/>.
@@ -41,6 +43,6 @@ namespace EnsureArg6
             T value,
 			OptsFn? optsFn = null,
 			[CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
-            => EnsureArg.EnumIsDefinedWithFlagsSupport(value, paramName);
+            => EnsureArg.EnumIsDefinedWithFlagsSupport(value, paramName, optsFn);
     }
 }
