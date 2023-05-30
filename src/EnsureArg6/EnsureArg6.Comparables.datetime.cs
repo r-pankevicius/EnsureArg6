@@ -10,37 +10,43 @@ namespace EnsureArg6
         public static DateTime Is(
             DateTime value,
             DateTime expected,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.Is(value, expected, paramName);
 
         public static DateTime IsNot(
             DateTime value,
             DateTime expected,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsNot(value, expected, paramName);
 
         public static DateTime IsLt(
             DateTime value,
             DateTime limit,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsLt(value, limit, paramName);
 
         public static DateTime IsLte(
             DateTime value,
             DateTime limit,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsLte(value, limit, paramName);
 
         public static DateTime IsGt(
             DateTime value,
             DateTime limit,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsGt(value, limit, paramName);
 
         public static DateTime IsGte(
             DateTime value,
             DateTime limit,
-            [CallerArgumentExpression("value")] string paramName = "")
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string paramName = "")
             => EnsureArg.IsGte(value, limit, paramName);
 
         public static DateTime IsInRange(

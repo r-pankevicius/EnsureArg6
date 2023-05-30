@@ -68,7 +68,7 @@ namespace EnsureArg6.Tests
 			static DateTime Check(DateTime param, DateTime before, DateTime after) =>
 				EnsureArg.IsInRange(param, before, after, nameof(param));
 			static DateTime Check6(DateTime param, DateTime before, DateTime after) =>
-				EnsureArg6.IsInRange(param, before, after);
+				EnsureArg6.IsInRange<DateTime>(param, before, after);
 
 			TestBase.AssertInRangeThrowsTheSameArgumentException(Before, Now, After, Check, Check6);
 		}

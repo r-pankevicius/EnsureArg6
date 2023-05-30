@@ -29,7 +29,8 @@ namespace EnsureArg6
         /// </example>
         public static T EnumIsDefined<T>(
             T value,
-            [CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
             => EnsureArg.EnumIsDefined(value, paramName);
 
         /// <summary>
@@ -38,7 +39,8 @@ namespace EnsureArg6
         /// </summary>
         public static T EnumIsDefinedWithFlagsSupport<T>(
             T value,
-            [CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
+			OptsFn? optsFn = null,
+			[CallerArgumentExpression("value")] string? paramName = null) where T : struct, Enum
             => EnsureArg.EnumIsDefinedWithFlagsSupport(value, paramName);
     }
 }
