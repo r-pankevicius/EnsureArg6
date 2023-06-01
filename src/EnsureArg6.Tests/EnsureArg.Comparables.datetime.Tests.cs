@@ -11,8 +11,10 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void Is_Test()
 		{
-			static DateTime Check(DateTime param1, DateTime param2) => EnsureArg.Is(param1, param2, nameof(param1));
-			static DateTime Check6(DateTime param1, DateTime param2) => EnsureArg6.Is(param1, param2);
+			static DateTime Check(DateTime param1, DateTime param2) =>
+				EnsureArg.Is(param1, param2, nameof(param1));
+			static DateTime Check6(DateTime param1, DateTime param2) =>
+				EnsureArg6.Is(param1, param2);
 
 			TestBase.AssertThrowsTheSameArgumentException(Before, After, Check, Check6);
 		}
