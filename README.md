@@ -1,4 +1,4 @@
 # EnsureArg6
 EnsureArg without nameof.
 
-Or just to replace JetBrains InvokerParameterName with CallerArgumentExpression.
+See [ConceptTests.cs](./src/EnsureArg6.Tests/ConceptTests.cs)
