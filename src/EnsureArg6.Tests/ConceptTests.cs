@@ -7,38 +7,33 @@ namespace EnsureArg6.Tests
 		[Fact]
 		public void CanEnterClub_Test()
 		{
-			Club.Enter(new Person("Andreas", 17));
-		}
+			static Person CheckCantEnter(Person? person) => Club.Enter(person);
+			static Person CheckCantEnter6(Person? person) => Club.Enter6(person);
 
-		[Fact]
-		public void CanEnterClub6_Test()
-		{
-			Club6.Enter(new Person("Andreas", 17));
+			var personToCheck = new Person("Andreas", 17);
+
+			// Both methods will throw:
+			// System.ArgumentOutOfRangeException : Value '17' is not greater than or equal to limit '21'. (Parameter 'person.Age')
+			// Actual value was 17.
+			TestBase.AssertThrowsTheSameArgumentException(personToCheck, CheckCantEnter, CheckCantEnter6);
 		}
 
 		private static class Club
 		{
 			private const int MinAge = 21;
 
-			public static void Enter(Person person)
+			public static Person Enter(Person? person)
 			{
-				//  System.ArgumentOutOfRangeException : Value '17' is not greater than or equal to limit '21'. (Parameter 'person.Age')
-				//Actual value was 17.
 				EnsureArg.IsNotNull(person, nameof(person));
 				EnsureArg.IsGte(person.Age, MinAge, $"{nameof(person)}.{nameof(person.Age)}");
+				return person!;
 			}
-		}
 
-		private static class Club6
-		{
-			private const int MinAge = 21;
-
-			public static void Enter(Person person)
+			public static Person Enter6(Person? person)
 			{
-				// System.ArgumentOutOfRangeException : Value '17' is not greater than or equal to limit '21'. (Parameter 'person.Age')
-				// Actual value was 17.
 				EnsureArg6.IsNotNull(person);
 				EnsureArg6.IsGte(person.Age, MinAge);
+				return person!;
 			}
 		}
 
