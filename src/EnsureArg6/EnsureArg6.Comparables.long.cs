@@ -1,10 +1,9 @@
-﻿using EnsureThat;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
-    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.long.cs
-    public static partial class EnsureArg6
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.long.cs
+	public static partial class EnsureArg6
     {
         public static long Is(long value, long expected,
 			OptsFn? optsFn = null,

@@ -1,7 +1,6 @@
-﻿using EnsureThat;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace EnsureArg6.Tests
+namespace EnsureThat
 {
 	public class EnsurEnsureArg6_Strings_Tests
 	{

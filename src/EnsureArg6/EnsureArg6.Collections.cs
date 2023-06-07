@@ -1,13 +1,12 @@
-﻿using EnsureThat;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
-    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Collections.cs
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Collections.cs
 	public static partial class EnsureArg6
 	{
         [return: NotNull]

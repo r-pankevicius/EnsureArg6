@@ -1,12 +1,11 @@
-﻿using EnsureThat;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
-    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Types.cs
-    public static partial class EnsureArg6
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Types.cs
+	public static partial class EnsureArg6
     {
         [return: NotNull]
         public static Type IsInt([NotNull]Type param,

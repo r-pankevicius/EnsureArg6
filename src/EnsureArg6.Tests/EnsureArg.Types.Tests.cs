@@ -1,9 +1,4 @@
-﻿using EnsureThat;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
-using System.Security.Cryptography;
-using System;
-
-namespace EnsureArg6.Tests
+﻿namespace EnsureThat
 {
 	public class EnsureArg6_Types_Tests
 	{

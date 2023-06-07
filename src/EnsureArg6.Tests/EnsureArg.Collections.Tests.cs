@@ -1,7 +1,6 @@
-﻿using EnsureThat;
-using System.Collections;
+﻿using System.Collections;
 
-namespace EnsureArg6.Tests
+namespace EnsureThat
 {
 	public class EnsureArg6_Collections_Tests
 	{

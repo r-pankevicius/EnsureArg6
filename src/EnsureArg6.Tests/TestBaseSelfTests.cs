@@ -1,6 +1,6 @@
 ﻿using Xunit.Sdk;
 
-namespace EnsureArg6.Tests
+namespace EnsureThat
 {
 	public class TestBaseSelfTests
 	{

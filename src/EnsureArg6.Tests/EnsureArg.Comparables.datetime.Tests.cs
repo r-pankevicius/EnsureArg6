@@ -1,6 +1,4 @@
-﻿using EnsureThat;
-
-namespace EnsureArg6.Tests
+﻿namespace EnsureThat
 {
 	public class EnsureArg6_Comparables_datetime_Tests
 	{

@@ -1,11 +1,10 @@
-﻿using EnsureThat;
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
-    // https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.datetime.cs
-    public static partial class EnsureArg6
+	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Comparables.datetime.cs
+	public static partial class EnsureArg6
     {
         public static DateTime Is(
             DateTime value,

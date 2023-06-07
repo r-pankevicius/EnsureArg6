@@ -1,4 +1,4 @@
-﻿namespace EnsureArg6.Tests
+﻿namespace EnsureThat
 {
 	internal static class TestBase
 	{

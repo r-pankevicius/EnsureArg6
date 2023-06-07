@@ -1,8 +1,7 @@
-﻿using EnsureThat;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
 	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Any.cs
 	public static partial class EnsureArg6

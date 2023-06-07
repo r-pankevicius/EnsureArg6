@@ -1,10 +1,9 @@
-﻿using EnsureThat;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-namespace EnsureArg6
+namespace EnsureThat
 {
 	// https://github.com/danielwertheim/Ensure.That/blob/master/src/projects/EnsureThat/EnsureArg.Strings.cs
 	public static partial class EnsureArg6
